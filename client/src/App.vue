@@ -1,7 +1,7 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
+  import UploadComponent from './components/UploadComponent.vue'
 </script>
 
 <template>
-  <HelloWorld />
+  <UploadComponent/>
 </template>
