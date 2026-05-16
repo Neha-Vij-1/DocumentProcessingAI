@@ -8,3 +8,18 @@ export async function insertDocument({ id, fileName, filePath, mimeType, status 
     [id, fileName, filePath, mimeType, status]
   );
 }
+
+export async function getDocumentById(id) {
+  const [rows] = await db.execute(
+    `SELECT * FROM documents WHERE id = ?`,
+    [id]
+  );
+  return rows[0] || null;
+}
+
+export async function updateExtractedText(id, extractedText) {
+  await db.execute(
+    `UPDATE documents SET extracted_text = ? WHERE id = ?`,
+    [extractedText, id]
+  );
+}
